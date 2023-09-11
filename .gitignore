@@ -8,3 +8,10 @@ application.windows32
 application.windows64
 application.macosx
 out
+
+# Inhalt nicht nötig
+tools/
+templates/
+modes/
+libraries/
+examples/
