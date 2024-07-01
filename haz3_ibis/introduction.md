@@ -20,7 +20,7 @@ Zur Kommunikation werden verschiedene Telegramme benutzt.
 - [ ] DS120
 
 
-# Spickzettel / Hilfsmittel
+## Spickzettel / Hilfsmittel
 - [ASCII Umrechner](https://gc.de/gc/ascii/)
 - [Processing Reference](https://processing.org/reference)
 - [Processing Serial Libary](https://processing.org/reference/libraries/serial/index.html)
