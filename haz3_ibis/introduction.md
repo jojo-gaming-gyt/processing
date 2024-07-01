@@ -21,6 +21,6 @@ Zur Kommunikation werden verschiedene Telegramme benutzt.
 
 
 # Spickzettel / Hilfsmittel
-[ASCII Umrechner] (https://gc.de/gc/ascii/)
-[Processing Reference] (https://processing.org/reference)
-[Processing Serial Libary] (https://processing.org/reference/libraries/serial/index.html)
+[ASCII Umrechner](https://gc.de/gc/ascii/)
+[Processing Reference](https://processing.org/reference)
+[Processing Serial Libary](https://processing.org/reference/libraries/serial/index.html)
