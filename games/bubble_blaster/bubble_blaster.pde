@@ -1,5 +1,5 @@
+PImage ship;
 color bgcolor = color(0, 0, 255);
-color shipcolor = color(255, 0, 0);
 
 //variables
 
@@ -7,10 +7,12 @@ float sX = 50;
 float sY = 50;
 float sSize = 30;
 float sRadius = 25;
+float sVelo = 10;
 
 
 void setup() {
   size(800, 500);
+  ship = loadImage("ship.png");
   frameRate(60);
   windowTitle("Bubble Blaster");
   background(bgcolor);
@@ -19,15 +21,22 @@ void setup() {
 
 void startup() {
   background(bgcolor);
-  fill(255);
-  circle(sX, sY, sRadius);
-  fill(shipcolor);
-  triangle(sX-sRadius/2, sY-sRadius/2, sX, sY+sRadius, sX + sRadius, sY);
-  
+  image(ship, sX-15, sY-15, 31, 31); 
+  //circle(sX, sY, 28);
   
 }
 
 void draw() {
   
   
+}
+
+
+void keyPressed() {
+  if (keyCode == LEFT) {
+    
+  }
+  if (keyCode == RIGHT) {}
+  if (keyCode == UP) {}
+  if (keyCode == DOWN) {}
 }
