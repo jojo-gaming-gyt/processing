@@ -18,7 +18,7 @@ void send_telegram() {
   try {
 
     // COM, BAUD, PARITY, DATABITS, STOPBITS
-    Wandler = new Serial(this, "COM4", 1200, 'N', 8, 1);
+    Wandler = new Serial(this, "COM4", 1200, 'E', 7, 2);
     com_port = true;
   }
   catch (RuntimeException err) {
