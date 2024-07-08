@@ -38,6 +38,6 @@ void send_telegram() {
 
   Wandler.stop();
 
-  print("[ ][-] Telegram gesendet ");
+  print("[<][-] Telegram gesendet ");
   printDate();
 }
