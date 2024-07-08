@@ -6,27 +6,23 @@
 
 /*  IMPORTS     */
 import processing.serial.*;
-
-final String WANDLER_COM_PORT = "COM8";
-
 Serial Wandler;
 
-String Haltestelle = "Johannistahl";
 
+/*  CONSTANTS */
+final String WANDLER_COM_PORT = "COM8";
 
-byte max_telegram_length = 27;
+/* Programm-Variablen */
+boolean debug= false;
 
-// Verfügbarkeit COM Port
-boolean com_port = false;
-
-// Debugging
-final boolean debug = false;
-
-
-// Platz für gesammtes Telegram
-
+/* Funktions-Variablen */
+String Haltestelle = "Johannistahl";  // Anzuzeigender Text
+boolean com_port = false;             // Verfügbarkeit COM Port
 byte telegram_parity;
-byte[] message_bytes = new byte[24];
+
+
+//byte max_telegram_length = 27;
+//byte[] message_bytes = new byte[24];
 
 
 
@@ -60,7 +56,7 @@ void printDate() {
 
 
 void setup() {
-  print("[+] Startup: ");
+  print("[>][0] Startup: ");
   printDate();
 
 
@@ -69,15 +65,20 @@ void setup() {
   windowTitle("IBIS Master für HAZ 3");
   background(255, 255, 255);
 
-  println("[ ][+] Serial Ports avaliable: ");
-  printArray(Serial.list());
-  println("[ ][-] Serial Ports");
 
+  list_ports();
+  
+  delay(20000);
+  
+  exit();
 
   
   
   send_telegram();
   //ds009_24_telegram();
+
+  print("[<][0] End Startup: ");
+  printDate();
 }
 
 void draw() {
