@@ -7,9 +7,11 @@
 /*  IMPORTS     */
 import processing.serial.*;
 
+final String WANDLER_COM_PORT = "COM8";
+
 Serial Wandler;
 
-
+String Haltestelle = "Johannistahl";
 
 
 byte max_telegram_length = 27;
@@ -18,19 +20,13 @@ byte max_telegram_length = 27;
 boolean com_port = false;
 
 // Debugging
-boolean debug = true;
+final boolean debug = false;
 
 
 // Platz für gesammtes Telegram
-byte[] telegram = new byte[max_telegram_length];
+
 byte telegram_parity;
 byte[] message_bytes = new byte[24];
-
-
-
-// Platz für gesammte Nachricht
-char[] message_char = new char[(max_telegram_length - 3)];
-char[] message = {'H', 'ä', 'l', 'l', 'o'};
 
 
 
@@ -81,6 +77,7 @@ void setup() {
   
   
   send_telegram();
+  //ds009_24_telegram();
 }
 
 void draw() {

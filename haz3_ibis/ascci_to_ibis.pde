@@ -1,23 +1,36 @@
-void formatieren() {
-  // Mit Leerzeichen füllen
-  for (byte i = 0; i < message_char.length; i++) {
-    message_char[i] = 32;
+byte[] encode_message(byte stellen) {
+
+
+  if (stellen == 0) {
+    stellen = 24;
   }
 
-  arrayCopy(message, message_char);
-}
+  byte[] message_bytes = new byte[stellen];
+
+  // Mit Leerzeichen füllen
+  for (byte i = 0; i < stellen; i++) {
+    message_bytes[i] = 32;
+  }
 
 
 
 
-void encode_message() {
-  formatieren();
 
-  for (byte i = 0; i < message_bytes.length; i++) {
-    int zeichen = message_char[i];
+  for (byte i = 0; i < stellen; i++) {
+    char zeichen;
+
+    // Auswahl string
+    if (i >= Haltestelle.length()) {
+      zeichen = 32;
+    } else zeichen = Haltestelle.charAt(i);
+
+
 
     switch (zeichen) {
 
+    case '\r':
+      message_bytes[i] = 'r';
+      break;
     case 'ä':
       message_bytes[i] = 123;    // {
       break;
@@ -42,6 +55,8 @@ void encode_message() {
 
     default:
       message_bytes[i] = byte(zeichen);
-    }
-  }
+    } // end_switch
+  } // end_for
+
+  return message_bytes;
 }

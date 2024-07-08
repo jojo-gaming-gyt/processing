@@ -1,7 +1,7 @@
-byte calculate_parity(byte[] data, int end_position) {
+byte calculate_parity(byte[] data, int start_position, int end_position) {
   int parity = 0;
 
-  for (int i = 0; i < end_position; i++) {
+  for (int i = start_position; i < end_position; i++) {
     parity = parity ^ data[i];
   }
 
@@ -18,37 +18,23 @@ void send_telegram() {
   try {
 
     // COM, BAUD, PARITY, DATABITS, STOPBITS
-    Wandler = new Serial(this, "COM4", 1200, 'N', 8, 1);
+    Wandler = new Serial(this, WANDLER_COM_PORT, 1200, 'E', 7, 2);
     com_port = true;
   }
   catch (RuntimeException err) {
-    err.printStackTrace();
+    //err.printStackTrace();
     com_port = false;
     println("[ ][!] Ein Fehler beim Verbindungsaufbau zum Wandler ist aufgetreten");
   }
   if (!com_port) return;
 
-  ds009_24_telegram();
-
-  if (debug) {
-    print("{");
-    for (byte i = 0; i < telegram.length; i++) {
-      print(telegram[i]);
-      print(' ');
-    }
-    print("} Parity: ");
-    print(telegram_parity);
-    print(". Decode: >");
-    
-    for (byte i = 0; i < telegram.length; i++) {
-      if (telegram[i] == '\r') break;
-      print(char(telegram[i]));
-    }
-    println("<");
-  }
-
   // Telegram zu Wandler senden
-  Wandler.write(telegram);
+  Wandler.write(ds009_24_telegram());
+
+
+
+  
+  
 
   Wandler.stop();
 
