@@ -16,7 +16,7 @@ Zur Kommunikation werden verschiedene Telegramme benutzt.
 - [ ] DS003c
 - [ ] DS020
 
-### Save Telegramme
+### Salve Telegramme
 - [ ] DS120
 
 
