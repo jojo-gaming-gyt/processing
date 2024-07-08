@@ -3,8 +3,11 @@ void list_ports() {
   println("[>][1] Serial Ports avaliable: ");
 
   for (byte i = 0; i < Ports.length; i++) {
-    text(Ports[i], 0 + 20*i, 20);
-    println(Ports[i]);
+    print("[ ][1] [");
+    print(i);
+    print("] : ");
+    print(Ports[i]);
+    println("");
   }
 
   
