@@ -15,3 +15,5 @@ templates/
 modes/
 libraries/
 examples/
+
+*.autosave
