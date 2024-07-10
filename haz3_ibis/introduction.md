@@ -4,7 +4,7 @@ Integriertes Bordinformationssystem
 ## Generelles
 IBIS ist ein Bussystem welches unter anderem bei Eisenbahn Verkehrsunternehmen zum Einsatz kommt.
 
-IBIS funktioniert auf UART Basis, jedoch mit 24V Spannungspegel:
+IBIS funktioniert auf UART Basis (1200,7,e,2), jedoch mit 24V Spannungspegel:
 
 Zur Kommunikation werden verschiedene Telegramme benutzt.
 
