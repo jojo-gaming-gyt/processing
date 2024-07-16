@@ -11,12 +11,15 @@ Serial Wandler;
 
 /*  CONSTANTS */
 final String WANDLER_COM_PORT = "COM8";
+final boolean cycle_telegram = true;
 
 /* Programm-Variablen */
-boolean debug= false;
+boolean debug = false;
+boolean repeat_telegram = true;
+boolean telegram_fehler = false;
 
 /* Funktions-Variablen */
-String Haltestelle = "Johannistahl";  // Anzuzeigender Text
+String Haltestelle = "Johannisthal";  // Anzuzeigender Text
 boolean com_port = false;             // Verfügbarkeit COM Port
 byte telegram_parity;
 
@@ -67,14 +70,11 @@ void setup() {
 
 
   list_ports();
-  
-  delay(20000);
-  
-  exit();
 
-  
-  
-  send_telegram();
+  send_telegram("DS003c_6", 0);
+  //ds003c_telegram(6);
+
+  //send_telegram();
   //ds009_24_telegram();
 
   print("[<][0] End Startup: ");

@@ -9,7 +9,7 @@ byte calculate_parity(byte[] data, int start_position, int end_position) {
   return end_parity;
 }
 
-
+/*
 void send_telegram() {
   print("[ ][+] Telegram senden ");
   printDate();
@@ -41,3 +41,4 @@ void send_telegram() {
   print("[<][-] Telegram gesendet ");
   printDate();
 }
+*/

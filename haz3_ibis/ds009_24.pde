@@ -25,22 +25,7 @@ byte[] ds009_24_telegram() {
   telegram[26] = byte('\r');  // Formatzeichen "CR"
 
 
-  if (true) {
-    print("{");
-    for (byte i = 0; i < telegram.length; i++) {
-      print(telegram[i]);
-      print(' ');
-    }
-    print("} Parity: ");
-    print(telegram_parity);
-    print(". Decode: >");
 
-    for (byte i = 0; i < telegram.length; i++) {
-      if (telegram[i] == '\r') break;
-      print(char(telegram[i]));
-    }
-    println("<");
-  }
   
   return telegram;
 }
