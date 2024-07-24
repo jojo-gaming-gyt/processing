@@ -19,9 +19,9 @@ byte[] encode_message(byte stellen) {
   for (byte i = 0; i < stellen; i++) {
     char zeichen;
 
-    // Auswahl string
+    // Einzelne Buchstaben auf String auslesen
     if (i >= Haltestelle.length()) {
-      zeichen = 32;
+      zeichen = 32;   // Gegen Overflow
     } else zeichen = Haltestelle.charAt(i);
 
 
