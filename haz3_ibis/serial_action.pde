@@ -51,7 +51,7 @@ void send_telegram(String telegram_type, int wdh_per_minute) {
     return;
   }
   
-    if (debug) {
+  if (debug) {
     print("{ ");
     for (byte i = 0; i < final_telegram.length; i++) {
       print(final_telegram[i]);
@@ -88,12 +88,20 @@ void send_telegram(String telegram_type, int wdh_per_minute) {
   if (!com_port) return;
   //if (!repeat_telegram) return;
 
+
+  Wandler.write(final_telegram);
+  Wandler.stop();
+
+  println("Telegram abgesendet");
+  return;
+
+  /*
   if (wdh_per_minute < 1) {
     Wandler.write(final_telegram);
     Wandler.stop();
     return;
   }
-
+  */
   // Mehrfaches Wiederholen
 
 
