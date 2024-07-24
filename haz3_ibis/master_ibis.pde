@@ -14,12 +14,14 @@ final String WANDLER_COM_PORT = "COM8";
 final boolean cycle_telegram = true;
 
 /* Programm-Variablen */
-boolean debug = false;
+boolean debug = true;
 boolean repeat_telegram = true;
 boolean telegram_fehler = false;
 
 /* Funktions-Variablen */
 String Haltestelle = "Johannisthal";  // Anzuzeigender Text
+
+
 boolean com_port = false;             // Verfügbarkeit COM Port
 byte telegram_parity;
 
@@ -71,7 +73,12 @@ void setup() {
 
   list_ports();
 
-  send_telegram("DS003c_6", 0);
+
+  // Telegram 009 24C senden
+  send_telegram("DS009_24", 0);
+
+
+
   //ds003c_telegram(6);
 
   //send_telegram();
