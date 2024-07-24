@@ -19,10 +19,12 @@ byte[] ds009_24_telegram() {
     telegram[i + 1] = message[i];
   }
 
-  telegram_parity = calculate_parity(telegram, 0, 24);
-  telegram[25] = telegram_parity;
+  telegram[25] = byte('\r');  // Formatzeichen "CR"
 
-  telegram[26] = byte('\r');  // Formatzeichen "CR"
+  telegram_parity = calculate_parity(telegram, 0, 25);
+  telegram[26] = telegram_parity;
+
+  
 
 
 

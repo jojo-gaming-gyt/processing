@@ -13,7 +13,7 @@ Zur Kommunikation werden verschiedene Telegramme benutzt.
 - [ ] DS009 (16C)
 - [ ] DS009 (24C) :memo:
 - [ ] DS003
-- [ ] DS003c
+- [ ] DS003c :memo:
 - [ ] DS020
 
 ### Salve Telegramme
